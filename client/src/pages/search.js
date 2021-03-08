@@ -3,6 +3,7 @@ import { Input, FormBtn } from "../components/form";
 import {Container, Row, Col} from "react-bootstrap";
 import API from "../utils/API";
 import SearchResultContainer from "../components/searchResultContainer.js";
+import Header from "../components/header";
 
 
 function Search(){
@@ -28,6 +29,7 @@ function Search(){
       
     return(
         <div>
+            <Header/>
             <Container  className="border border-dark">
                     <Row>
                         <Col className="col-md-12">
