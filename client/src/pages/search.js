@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Input, FormBtn } from "../components/Form";
-import {Container, Row} from "react-bootstrap";
+import {Container, Row, Col} from "react-bootstrap";
 import API from "../utils/API";
 import SearchResultContainer from "../components/SearchResultContainer.js";
 
@@ -28,30 +28,36 @@ function Search(){
       
     return(
         <div>
-        <Container>
-            <Row>
-                <h5>Book Search</h5>
-            </Row>
-            <Row>
-                <form>
-                    <Input
-                        onChange={handleInputChange}
-                        name="title"
-                        placeholder="Title (required)"
-                    />
-                    <FormBtn
-                        disabled={!(formObject.title)}
-                        onClick={handleFormSubmit}
-                    >
-                        Search
-                    </FormBtn>
-                </form>
-            </Row>
-        </Container>
-        <hr/>
-        <SearchResultContainer items={books} />
-
-    </div>
+            <Container  className="border border-dark">
+                    <Row>
+                        <Col className="col-md-12">
+                        <h4 className="m-3 text-left">Book Search</h4>
+                        </Col>
+                    </Row>
+                    <Container>
+                    <Row>
+                        <Col className="col-md-12">
+                            <form>
+                                <Input  
+                                    onChange={handleInputChange}
+                                    name="title"
+                                    placeholder="Title (required)"
+                                    className="m-3 text-left w-100"
+                                />
+                                <FormBtn
+                                    disabled={!(formObject.title)}
+                                    onClick={handleFormSubmit}
+                                >
+                                    Search
+                                </FormBtn>
+                            </form>
+                        </Col>
+                    </Row>
+                </Container>
+            </Container>
+            <br/>
+            <SearchResultContainer items={books} />
+        </div>
     )    
 };
 
