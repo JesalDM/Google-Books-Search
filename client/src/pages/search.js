@@ -1,8 +1,8 @@
 import React, { useState} from "react";
-import { Input, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/form";
 import {Container, Row, Col} from "react-bootstrap";
 import API from "../utils/API";
-import SearchResultContainer from "../components/SearchResultContainer.js";
+import SearchResultContainer from "../components/searchResultContainer.js";
 
 
 function Search(){
@@ -42,7 +42,7 @@ function Search(){
                                     onChange={handleInputChange}
                                     name="title"
                                     placeholder="Title (required)"
-                                    className="m-3 text-left w-100"
+                                    className="text-left w-100"
                                 />
                                 <FormBtn
                                     disabled={!(formObject.title)}
