@@ -7,8 +7,8 @@ import Header from "../components/header";
 
 
 function Search(){
- const [books, setBooks] = useState([])
- const [formObject, setFormObject] = useState({})
+ const [books, setBooks] = useState([]); // API Results state, initially empty array
+ const [formObject, setFormObject] = useState({});// Form State, initially empty object.
       
 // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -22,7 +22,19 @@ function Search(){
     event.preventDefault();
     if (formObject.title) {
       API.getBooks(formObject.title)
-       .then(res =>{console.log("handleFormSubmit", res); setBooks(res.data.items)})
+       .then(res =>{
+           const searchResults = [];
+           res.data.items.forEach(resultItem => {
+               const book = {};
+               book.title = resultItem.volumeInfo.title;
+               book.authors = resultItem.volumeInfo.authors || [] ;
+               book.description = resultItem.volumeInfo.description;
+               book.image = resultItem.volumeInfo.imageLinks && resultItem.volumeInfo.imageLinks.thumbnail ? resultItem.volumeInfo.imageLinks.thumbnail : "";
+               book.link = resultItem.volumeInfo.previewLink;
+               searchResults.push(book);
+           });
+           setBooks(searchResults)
+        })
         .catch(err => console.log(err));
     }
   };
