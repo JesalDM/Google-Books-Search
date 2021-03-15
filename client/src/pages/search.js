@@ -10,6 +10,13 @@ function Search(){
  const [books, setBooks] = useState([]); // API Results state, initially empty array
  const [formObject, setFormObject] = useState({});// Form State, initially empty object.
       
+  function saveBook(bookToSave) {
+      console.log("Saving Book => ", bookToSave);
+      API.saveBook(bookToSave)
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+  }
+
 // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -70,7 +77,7 @@ function Search(){
                 </Container>
             </Container>
             <br/>
-            <SearchResultContainer items={books} />
+            <SearchResultContainer items={books} clickFunction={saveBook}/>
         </div>
     )    
 };

@@ -10,7 +10,7 @@ function SearchResultContainer(props) {
                 <Col className="col-md-12"><h4 className="text-left ml-3">Results</h4></Col>
             </Row>
       {props.items.map(book=> ( 
-        <SearchResult key={book.link} book={book} />
+        <SearchResult key={book.link} book={book} clickHandler={props.clickFunction}/>
       ))}
       </Container>
   )

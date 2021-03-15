@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Row, Col} from "react-bootstrap";
 
 function SearchResult(props) {
-    const {book} = props;
+    const {book, clickHandler} = props;
     return(
       <>
         <Container className="border border-dark p-4">
@@ -13,7 +13,7 @@ function SearchResult(props) {
             <Col className="col-md-1">
                 <a href={book.link} target="_blank" rel="noreferrer"><button type="button">View</button></a></Col>
             <Col className="col-md-1">
-                <button type="button">Save</button>
+                <button type="button" onClick={()=> clickHandler(book)}>Save</button>
             </Col>
           </Row>
           <Row>
