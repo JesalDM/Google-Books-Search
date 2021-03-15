@@ -16,7 +16,7 @@ module.exports = (app) => {
     });
 
     app.delete("/api/books/:id", (req, res)=> {
-        Book.remove({_id: req.body.id})
+        Book.remove({_id: req.params.id})
         .then(()=> res.send("Success"))
         .catch((err)=> res.status(422).json(err));
     });

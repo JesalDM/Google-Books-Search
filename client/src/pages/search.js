@@ -77,7 +77,7 @@ function Search(){
                 </Container>
             </Container>
             <br/>
-            <SearchResultContainer items={books} clickFunction={saveBook}/>
+            <SearchResultContainer items={books} action="Save" clickFunction={saveBook}/>
         </div>
     )    
 };
