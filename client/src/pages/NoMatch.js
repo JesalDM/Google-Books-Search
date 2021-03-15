@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Container, Jumbotron} from "react-bootstrap";
+import { Col, Row, Container} from "react-bootstrap";
 
 function NoMatch() {
   return (
