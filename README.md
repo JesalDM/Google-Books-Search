@@ -29,7 +29,7 @@ There are 2 pages in the application:
 
 ## Usage
 1. In the command line/terminal within the directory that the project is downloaded, invoke the application using the command 'npm start' 
-2. The application can be accessed using this URL in the browser (https://google-books-search-app.herokuapp.com/)The Google Search Books application will be rendered, with the Navbar that includes the Search and Saved tabs. By default, user lands into the Search tab. Both tabs have a common Header component.
+2. The application can be accessed using this URL in the browser (https://google-search-books-app.herokuapp.com/)The Google Search Books application will be rendered, with the Navbar that includes the Search and Saved tabs. By default, user lands into the Search tab. Both tabs have a common Header component.
 3. The input textbox on the Search Page can be used to enter a book title and search for the book in google books. The search results are rendered in the results section of the page. Every record has a View button that brings the user to the book on Google books, and a Save button that saves the corresponding book to the database.
 4. Clicking on the Saved tab navigates the user to the Saved Page. This page displays all the books that have been saved to the 'googlebooks' database in Mongodb. Every saved book record in the Saved Books section has a View button that again brings the user to the book in Google books, adna  Delete button that allows a user to delete any of the existing saved books from the database.
 
@@ -47,7 +47,7 @@ This project is licensed under the terms of the MIT license.
 
 ## For Review
 * Github Repository URL: https://github.com/JesalDM/google-books-search
-* Deployed application Heroku URL: https://google-books-search-app.herokuapp.com/
+* Deployed application Heroku URL: https://google-search-books-app.herokuapp.com/
 * Application demo: ![Application-Demo](./client/assets/google_search_books_app_demo.gif)
 * Screenshot :
     ![Application Screenshot](./client/assets/Google_books_search_page_screenshot.png)
